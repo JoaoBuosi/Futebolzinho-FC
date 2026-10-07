@@ -56,6 +56,7 @@ export class LivingWorldEngine{
    if(player.status!=="active"||!player.clubId||player.age>28||player.overall<70) continue;
    if(Math.random()>0.12) continue;
    const current=this.data.clubs[player.clubId];
+   if(!current) continue;
    const candidates=Object.values(this.data.clubs).filter(c=>c.id!==current.id&&c.countryId===current.countryId&&c.budget>player.marketValue*0.8);
    const target=candidates[Math.floor(Math.random()*candidates.length)];
    if(!target) continue;
