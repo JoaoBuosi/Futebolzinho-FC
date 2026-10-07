@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import WorldDashboard from "./components/WorldDashboard";
 import { Activity, Flag, Goal, Pause, Play, RotateCcw, Shield, Trophy, Users, Zap } from "lucide-react";
 
 type Event={minute:number;team:"home"|"away";type:"goal"|"card"|"shot";text:string};
@@ -73,6 +74,7 @@ export default function Home(){
     <div className="rounded-3xl border border-emerald-950 bg-[#0c1814] p-5"><h2 className="mb-4 font-bold">Atalhos</h2><div className="space-y-3 text-sm text-zinc-300"><div className="flex gap-2"><Users size={15} className="text-emerald-400"/> Substituições</div><div className="flex gap-2"><Shield size={15} className="text-emerald-400"/> Linha defensiva</div><div className="flex gap-2"><Trophy size={15} className="text-emerald-400"/> Instruções táticas</div></div></div>
    </aside>
   </div>
+  <div className="mx-auto max-w-7xl px-5 pb-5"><WorldDashboard /></div>
  </main>
 }
 function Team({name,short,color}:{name:string;short:string;color:string}){return <div className="flex flex-col items-center gap-3"><div className={"flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br "+color+" text-xl font-black"}>{short}</div><div className="font-semibold">{name}</div></div>}
