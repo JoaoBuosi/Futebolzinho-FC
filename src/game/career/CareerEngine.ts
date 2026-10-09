@@ -5,7 +5,7 @@ export type CareerGameState = { season:number; currentRound:number; clubs:Career
 const uid=()=>`gm-${Math.random().toString(36).slice(2,10)}`;
 const shuffle=<T,>(items:T[])=>{const a=[...items];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
 export function createCareerGame(activeClub:CareerClub,availableClubs:CareerClub[],competitionId:string,season=2026):CareerGameState{
- const pool=availableClubs.filter(c=>c.id!==activeClub.id&&c.country===activeClub.country);
+ const pool=availableClubs.filter(c=>c.id!==activeClub.id);
  const clubs=[activeClub,...shuffle(pool).slice(0,Math.min(29,pool.length))];
  const rotating=[...clubs];if(rotating.length%2)rotating.push({id:"BYE",name:"Folga",short:"BYE",logo:"",ovr:0,color:"#777",country:""});
  const fixtures:Fixture[]=[];const n=rotating.length;let round=1;
