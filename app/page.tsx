@@ -2,7 +2,7 @@
 import {useEffect,useMemo,useState} from "react";
 import { createCareerGame, simulateNextRound, nextRoundFixtures, careerClubName } from "../src/game/career/CareerEngine";
 import type { CareerGameState } from "../src/game/career/CareerEngine";
-import {ArrowRight,Bell,CalendarDays,Check,ChevronDown,Copy,Globe2,KeyRound,LockKeyhole,Mail,Search,Shield,Sparkles,Trophy,Users,X,Zap} from "lucide-react";
+import {ArrowRight,Bell,CalendarDays,Check,ChevronDown,Copy,Globe2,KeyRound,LockKeyhole,Mail,Play,Search,Shield,Sparkles,Trophy,Users,X,Zap} from "lucide-react";
 type Club={id:string;name:string;short:string;logo:number;ovr:number;color:string;country:string};
 type Comp={id:string;name:string;region:string};
 type Career={id:string;name:string;club:Club;competition:string;season:number;code:string;game?:CareerGameState};
